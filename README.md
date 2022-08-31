@@ -1,4 +1,4 @@
-# fundementals_of_computing_systems
+# Fundamentals of Computing Systems
 
 ## Intro
 The machine in Fundamentals of Computing Systems is designed to teach beginning
