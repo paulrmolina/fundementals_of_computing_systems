@@ -6,6 +6,9 @@
 #define MAX_BIN_SIZE     32         // Max length of the binary representation
 #define BASE_CHAR        '0'         // To conver character correctly
 
+// FUNCTION NAME: printArray 
+// RETURN
+//
 void printArray( char binaryRepresentation[], unsigned int length )
 {
    int x;
@@ -45,7 +48,8 @@ void AddOneToOnesComplement( char binaryRepresentation[], unsigned int length )
 }
 
 // FUNCTION NAME: ConvertToOnesComplement
-// 
+// RETURNS: none 
+//
 // Description:
 // Will take in a binary representation of an unsigned value and change it
 // to a One's Complement value (all bits flipped)
@@ -70,6 +74,8 @@ void ConvertToOnesComplement( char binaryRepresentation[], unsigned int length )
 }
 
 // FUNCTION NAME: ConvertToTwosComplement
+//
+// RETURNS: none
 //
 // Description:
 // Will take in a binary representation of an unsigned value and change it
