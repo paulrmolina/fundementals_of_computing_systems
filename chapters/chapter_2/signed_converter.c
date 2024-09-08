@@ -4,12 +4,22 @@
 #define MAX_INPUT        2147483647 // Max 32 bit integer input
 #define MAX_INPUT_LENGTH 10         // Max length of the user input
 #define MAX_BIN_SIZE     32         // Max length of the binary representation
-#define BASE_CHAR        '0'         // To conver character correctly
+#define BASE_CHAR        '0'        // To conver character correctly
 
-// FUNCTION NAME: printArray 
-// RETURN
+// FUNCTION NAME: PrintArray 
+// RETURN: none
 //
-void printArray( char binaryRepresentation[], unsigned int length )
+// Description: prints an array of a given length.
+//
+// Input:
+// Name: binaryRepresantation
+// Type: char array
+// Description: a character array to print
+//
+// Name: length
+// Type: unsigned int
+// Description: the length of the array to print
+void PrintArray( char binaryRepresentation[], unsigned int length )
 {
    int x;
 
@@ -20,6 +30,23 @@ void printArray( char binaryRepresentation[], unsigned int length )
 
    printf( "\n" );
 }
+
+// FUNCTION NAME: AddOneToOnesComplement
+// RETURN: none
+//
+// Description: will add an integral one to a one's complement representation
+//              (this will cause the initial array to become a two's
+//              complement)
+//
+// Input:
+// Name: binaryRepresentation
+// Type: char array
+// Description: the binary one's complement to convert
+//
+// Name: length
+// Type: unsigned int
+// Description: the length of the array to convert
+// Note: the whole length of the array should be input for this to work
 void AddOneToOnesComplement( char binaryRepresentation[], unsigned int length )
 { 
    char carryOver = '1';
@@ -93,12 +120,11 @@ void ConvertToOnesComplement( char binaryRepresentation[], unsigned int length )
 void ConvertToTwosComplement( char binaryRepresentation[], unsigned int length )
 {
    ConvertToOnesComplement( binaryRepresentation, length );
-   //printf( "Printing after converting to One's Complement:\n" );
-   //printArray( binaryRepresentation, length );
-   //printf ( "\n" );
    AddOneToOnesComplement( binaryRepresentation, length );
 }
 
+// Function Name: ConvertToBinary
+//
 void ConvertToBinary( char binaryRepresentation[], int numToConvert, unsigned int sizeOfBinRep )
 {
    int x, placeValue;
@@ -127,7 +153,7 @@ void ConvertAndPrint( int num )
    ConvertToTwosComplement( binaryRepresentation, length );
 
 
-   printArray( binaryRepresentation, length );
+   PrintArray( binaryRepresentation, length );
    //printf( "\n" );
 }
 
