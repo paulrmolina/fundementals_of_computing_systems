@@ -4,7 +4,7 @@
 #define MAX_INPUT        2147483647 // Max 32 bit integer input
 #define MAX_INPUT_LENGTH 10         // Max length of the user input
 #define MAX_BIN_SIZE     32         // Max length of the binary representation
-#define BASE_CHAR        '0'        // To conver character correctly
+#define BASE_CHAR        '0'        // To convert character correctly
 
 // FUNCTION NAME: PrintArray 
 // RETURN: none
