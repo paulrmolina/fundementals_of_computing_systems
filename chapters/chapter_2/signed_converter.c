@@ -11,7 +11,7 @@
 //
 // Description: prints an array of a given length.
 //
-// Input:
+// INPUT:
 // Name: binaryRepresantation
 // Type: char array
 // Description: a character array to print
@@ -38,10 +38,12 @@ void PrintArray( char binaryRepresentation[], unsigned int length )
 //              (this will cause the initial array to become a two's
 //              complement)
 //
-// Input:
+// INPUT:
 // Name: binaryRepresentation
 // Type: char array
-// Description: the binary one's complement to convert
+//
+// Description: 
+// Takes in the binary one's complement to convert to two's complement.
 //
 // Name: length
 // Type: unsigned int
@@ -81,7 +83,7 @@ void AddOneToOnesComplement( char binaryRepresentation[], unsigned int length )
 // Will take in a binary representation of an unsigned value and change it
 // to a One's Complement value (all bits flipped)
 //
-// Input:
+// INPUT:
 // Name: binaryRepresentation 
 // Type: char
 // Description: the binary representation to be manipulated as a character
@@ -108,9 +110,9 @@ void ConvertToOnesComplement( char binaryRepresentation[], unsigned int length )
 // Will take in a binary representation of an unsigned value and change it
 // to a Two's Complement value (all bits flipped and add 1)
 //
-// Input:
+// INPUT:
 // Name: binaryRepresentation
-// Type: char
+// Type: char array
 // Description: the binary representation to be manipulated as a character
 // array
 //
@@ -123,13 +125,30 @@ void ConvertToTwosComplement( char binaryRepresentation[], unsigned int length )
    AddOneToOnesComplement( binaryRepresentation, length );
 }
 
-// Function Name: ConvertToBinary
+// FUNCTION NAME: ConvertToBinary
 //
+// RETURNS: none
+//
+// Description:
+// Converts an integral value to a binary representation.
+//
+// INPUT:
+// Name: binaryRepresentation
+// Type: char array
+// Description: a placeholder representation to turn to binary from input
+// numToConver
+//
+// Name: numToConvert
+// Type: int
+// Description: an integral number to convert
+//
+// Name: sizeOfBinRep
+// Type: unsigned int
+// Description: length of representation
 void ConvertToBinary( char binaryRepresentation[], int numToConvert, unsigned int sizeOfBinRep )
 {
    int x, placeValue;
 
-   //printf( "num to convert: %d\n", numToConvert % 2 );
 
    // convert values right to left 
    for( int x = sizeOfBinRep; x > 0; x-- )
@@ -141,15 +160,22 @@ void ConvertToBinary( char binaryRepresentation[], int numToConvert, unsigned in
    }
 }
 
+// FUNCTION NAME: ConvertAndPrint 
+//
+// RETURNS: none
+//
+// Description:
+// Converts an integral number's representation and prints it.
+//
+// INPUT:
+// Name: num
+// Description: number to convert and print
 void ConvertAndPrint( int num )
 {
    char binaryRepresentation[MAX_BIN_SIZE];
    unsigned int length = sizeof( binaryRepresentation ) / sizeof( binaryRepresentation[0] );
 
    ConvertToBinary( binaryRepresentation, num, length );
-   //printf( "Printing after converting to binary:\n" );
-   //printArray( binaryRepresentation, length );
-   //printf( "\n" );
    ConvertToTwosComplement( binaryRepresentation, length );
 
 
@@ -162,8 +188,6 @@ int main( int argc, char **argv )
    int num = 0;
 
    num = strtol( argv[1], NULL, MAX_INPUT_LENGTH ); 
-
-   //printf( "%d\n", num );
 
    ConvertAndPrint( num );
 
